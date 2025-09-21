@@ -1,0 +1,643 @@
+/* --- Configurações Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- 1. CONFIGURAÇÕES GLOBAIS E PALETA DE CORES --- */
+/* --- 1. CONFIGURAÇÕES GLOBAIS E PALETA DE CORES --- */
+:root {
+    --cor-primaria: #0A2540;   /* Um azul mais escuro e corporativo */
+    --cor-secundaria: #dd2a2a; /* Nosso azul vibrante para botões */
+    --cor-texto: #333;
+    --cor-fundo: #F6F9FC;     /* Um cinza bem claro/quase branco */
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-forte: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+        /* ALTERE AS VARIÁVEIS DE FONTE PARA A NOVA COMBINAÇÃO */
+    --fonte-titulo: 'Exo 2', sans-serif;
+    --fonte-texto: 'Open Sans', sans-serif;
+}
+
+* {
+    /* Adiciona uma transição suave para TODAS as mudanças */
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: var(--fonte-texto); /* Alterado para usar a variável */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+p {
+    font-family: var(--fonte-texto); 
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* --- APLICAÇÃO DA FONTE DE TÍTULO --- */
+h1, h2, h3, .logo, .cta-button, .loader-text {
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--cor-primaria); /* Usando nossa nova cor primária */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    /* Estado inicial (invisível) */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    padding: 0 5% 20px 5% ;
+    text-align: center;
+    scroll-margin-top: 100px; 
+    /* A NOVA LINHA MÁGICA */
+    scroll-margin-top: 70px;
+}
+
+/* --- Cabeçalho e Navegação --- */
+/* CÓDGIO NOVO - HEADER COM EFEITO VIDRO (GLASSMORPHISM) */
+header {
+    /* Fundo branco com 50% de transparência */
+    background: rgba(255, 255, 255, 0.918); /* Fundo branco com mais transparência */
+
+    /* A mágica do desfoque no que está atrás */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para maior compatibilidade com navegadores */
+
+    /* Uma borda inferior sutil para definir o limite */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 70px;
+}
+
+select {
+    padding: 15px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f72020;
+    text-decoration: none;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 30px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+
+}
+
+.nav-list a:hover {
+    color: #f72020;
+}
+
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu-icon div {
+    width: 32px;
+    height: 2px;
+    background: #333;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+/* --- Seção Hero (Banner Principal) --- */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.tecfil.com.br/wp-content/uploads/2022/01/TECFIL_IMG_02_09.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-top: 80px;
+    /* Para compensar o header fixo */
+}
+
+.hero-gallery {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://cdn.dealerspace.ai/sudoeste/A%20Import%C3%A2ncia%20da%20lavagem%20de%20carro%20al%C3%A9m%20do%20brilho.png');
+     height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-top: 80px;
+    /* Para compensar o header fixo */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #F6F9FC;
+}
+
+.cta-button {
+    background-color: #f72020;
+    ;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #f72020;
+}
+
+/* --- Seção de Serviços --- */
+.services {
+    background-color: #fff;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* --- 2. CARDS DE SERVIÇO APRIMORADOS --- */
+.card {
+    background-color: #fff; /* Fundo branco para o card */
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave); /* Usando nossa sombra suave */
+    overflow: hidden;
+    width: 370px;
+    padding: 20px;
+    /* A transição já foi adicionada no '*' global */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efeito de levantar */
+    box-shadow: var(--sombra-forte); /* Sombra mais forte ao levantar */
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0;
+    color: #f72020;
+}
+
+.card p {
+    padding: 0 15px;
+    font-size: 0.9rem;
+}
+
+.card .price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+    margin: 20px 0;
+}
+
+/* --- ESTILOS PARA O CARD EM DESTAQUE (LAVAGEM COMPLETA) --- */
+
+.featured-card {
+    position: relative; /* Necessário para posicionar a fita e a coroa */
+    border: 2px solid var(--cor-secundaria); /* Borda destacada */
+    transform: scale(1.05); /* Ligeiramente maior para chamar a atenção */
+    box-shadow: var(--sombra-forte); /* Sombra mais forte inicialmente */
+    z-index: 1; /* Para garantir que ele fique na frente dos outros cards */
+}
+
+/* Efeito de hover para o card em destaque */
+.featured-card:hover {
+    transform: translateY(-15px) scale(1.08); /* Levanta e cresce um pouco mais */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Sombra ainda mais intensa */
+}
+
+/* Estilo para o selo "Mais Popular" */
+.ribbon {
+    position: absolute;
+    top: 9px; /* Posição do topo */
+    left: -10px; /* Posição da esquerda */
+    background-color: #28a745; /* Verde de promoção */
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0; /* Apenas o lado direito arredondado */
+    box-shadow: var(--sombra-suave);
+    text-transform: uppercase;
+    transform: rotate(-5deg); /* Leve rotação para parecer uma fita */
+}
+
+/* Estilo para o ícone da coroa */
+.crown-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: gold; /* Cor dourada para a coroa */
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Uma pequena sombra para destacar */
+    z-index: 2; /* Para a coroa ficar acima de tudo */
+}
+
+/* Ajuste no preço do card em destaque (opcional, para uma cor mais chamativa) */
+.featured-card .price {
+    color: rgb(233, 199, 8); /* Usando o azul vibrante para o preço */
+    font-size: 1.6rem; /* Preço ligeiramente maior */
+    font-weight: 700;
+}
+/* --- Seção da Galeria --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* --- 3. GALERIA INTERATIVA --- */
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Efeito de zoom suave */
+    filter: brightness(1.1); /* Deixa a imagem um pouco mais brilhante */
+}
+
+/* --- Seção de Contato --- */
+.contact {
+    background-color: #333;
+    color: #fff;
+}
+
+.contact h2 {
+    color: #fff;
+}
+
+/* Container principal das informações de contato */
+/* --- Estilo Centralizado para as Informações de Contato --- */
+
+/* --- Estilo Centralizado e Alinhado à Esquerda para Contato --- */
+
+.contact-info {
+    /* 1. Define uma largura máxima para o bloco de informações */
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+   display: inline-table;
+   text-align: left;
+}
+
+.contact-info p {
+    display: flex;          /* Ativa o Flexbox para alinhar ícone e texto */
+    align-items: center;    /* Alinha o ícone e o texto na vertical */
+    gap: 15px;              /* Espaço entre o ícone e o texto */
+    font-size: 1.1rem;      /* Tamanho da fonte */
+    margin-bottom: 15px;    /* Espaço entre cada linha de contato */
+    
+    /* 3. A propriedade 'justify-content' foi removida para usar o padrão (que é alinhar à esquerda) */
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.map-container {
+    background-color: #dadada27;
+}
+
+.contact-info-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centraliza o bloco */
+    margin: 20px auto;           /* Centraliza horizontalmente */
+}
+
+.contact-info-form p {
+    text-align: left;         /* Alinha o texto à esquerda */
+    width: 100%;              /* Faz o texto ocupar toda a largura do bloco */
+    max-width: 910px;         /* Opcional: limita a largura dos textos */
+}
+
+.text_description {
+    margin: 0 auto 20px auto;
+    max-width: 1100px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#contact .text_description {
+    color: #fff;
+}
+
+
+/* --- Estilos para a nova Seção de Agendamento --- */
+.text_description {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+}
+
+.agenda-wrapper {
+    margin-top: 40px;
+}
+
+.agenda-wrapper h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* --- Animação de Pulso para o Ícone do WhatsApp --- */
+
+#whatsapp-icon {
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    cursor: pointer;
+    
+    /* Adicionado para centralizar a imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Garante que a imagem do logo se ajuste bem */
+#whatsapp-icon img {
+    width: 85%; /* Um pouco menor que o container para a borda ter espaço */
+    height: auto;
+}
+
+/* A borda que vai pulsar */
+#whatsapp-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #25D366; /* Borda um pouco mais grossa */
+    
+    animation: pulse 1.7s infinite; /* Animação um pouco mais rápida */
+}
+
+/* Define a animação "pulse" */
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
+/*TELA DE CARREGAMENTO*/
+#loader {
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #e0e0e0;
+    border-top: 6px solid #f72020;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loader-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #f72020;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* --- 5. ANIMAÇÃO AO ROLAR A PÁGINA --- */
+section {
+    /* Estado inicial (invisível) */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    scroll-margin-top: 70px;
+}
+
+section.visible {
+    /* Estado final (visível) */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* A primeira seção (hero) já deve começar visível */
+section.hero {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsividade (para Celulares) --- */
+@media (max-width: 768px) {
+
+    /* CÓDIGO NOVO E CORRIGIDO */
+.nav-list {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 50vw;
+    height: calc(100vh - 80px);
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.15); /* Sombra corrigida */
+
+    position: absolute;
+    top: 70px; /* Certifique-se que este valor é a altura do seu header */
+    right: 0;
+    width: 60vw; /* Um pouco maior para o efeito ficar mais visível */
+    height: calc(100vh - 70px); /* A altura deve corresponder ao 'top' */
+
+    /* A MÁGICA DO EFEITO VIDRO ACONTECE AQUI */
+    background: rgba(255, 255, 255, 0.918); /* Fundo branco com mais transparência */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-left: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil na esquerda */
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+
+    /* Propriedades que já tínhamos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+}
+
+    .nav-list li {
+        margin-left: 0;
+        margin-bottom: 30px;
+        /* <-- NOVO: Adiciona espaço abaixo de cada item */
+        opacity: 0;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .nav-list.active {
+        transform: translateX(0);
+        margin-top: 1px;
+    }
+
+    .nav-list li:nth-child(1) {
+        animation: navLinkFade 0.5s ease forwards 0.2s;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .mobile-menu-icon.active .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+
+    .mobile-menu-icon.active .line2 {
+        opacity: 0;
+    }
+
+    .mobile-menu-icon.active .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-button {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #whatsapp-button {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    section {
+        scroll-margin-top: 120px;
+    }
+
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRCAR - O Melhor Lava-Rápido de Osasco</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <span class="loader-text">Carregando...</span>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511986849340?text=Olá! Eu gostaria de agendar um serviço." target="_blank" id="whatsapp-icon">
+        <img src="WhatsApp_icon.png" alt="Fale Conosco pelo WhatsApp">
+    </a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Automotiva DRCAR</a>
+            <ul class="nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#location">Localização</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="galeria.html"> | Galeria</a></li>
+            </ul>
+            <div class="mobile-menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>Seu carro novo, de novo.</h1>
+                <p>Qualidade e cuidado que seu veículo merece aqui em Osasco. Agende agora mesmo!</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button">Agende a sua lavagem</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços -->
+        <section id="services" class="services">
+            <h2>Nossos Serviços</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Lavagem Express</h3>
+                    <p>Lavagem externa rápida com cera líquida para quem não tem tempo a perder.</p>
+                    <span class="price">R$ 50,00</span>
+                </div>
+                <div class="card featured-card">
+                    <span class="ribbon">O mais pedido</span>
+                    <i class="fa-solid fa-crown crown-icon"></i>
+                    <h3>Lavagem Completa</h3>
+                    <p>Lavagem externa, aspiração interna completa e limpeza de painéis e vidros.</p>
+                    <span class="price">R$ 80,00</span>
+                </div>
+                <div class="card">
+                    <h3>Higienização Interna</h3>
+                    <p>Limpeza profunda de estofados, carpetes e teto. Elimina ácaros e bactérias.</p>
+                    <span class="price">R$ 250,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Localização -->
+        <section id="location" class="map-container">
+            <h2>Localização e como chegar na Automotiva DRCAR</h2>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-location-dot"></i> Endereço: R. Valdomiro Cavazzani, 590A - Jardim Munhoz Júnior, Osasco - SP, 06246-170</p>
+                <p><i class="fa-solid fa-clock"></i> Horário: Seg a Sáb, das 8h às 18h</p>
+                <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: (11) 91234-5678</p>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.0433533367163!2d-46.81177021412061!3d-23.494947904595286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefe0adcc80679%3A0x5d61c5824d79049d!2sR.%20Valdomiro%20Cavazzani%2C%20590A%20-%20Jardim%20Munhoz%20J%C3%BAnior%2C%20Osasco%20-%20SP%2C%2006246-170!5e0!3m2!1spt-BR!2sbr!4v1757787771508!5m2!1spt-BR!2sbr"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contact" class="contact">
+            <h2>Entre em Contato e Agende</h2>
+            <p class="text_description">Quer ver seu carro com cara de novo de novo? Entre em contato e agende seu horário para um tratamento de qualidade em seu veículo.</p>
+            <div id="contact-form">
+                <input type="text" id="nome" name="name" placeholder="Seu Nome" required>
+                <input type="tel" id="number" name="number" placeholder="Seu Número de telefone" value="(11) 9">
+                <select id="servico-selecao" name="service" required>
+                    <option value="" disabled selected>Selecione o serviço desejado...</option>
+                    <option value="Lavagem Express - R$ 45,00">Lavagem Express (R$ 45,00)</option>
+                    <option value="Lavagem Completa - R$ 80,00">Lavagem Completa (R$ 80,00)</option>
+                    <option value="Higienização Interna - R$ 250,00">Higienização Interna (R$ 250,00)</option>
+                    <option value="Polimento Cristalizado - (a consultar)">Polimento Cristalizado (Consultar preço)</option>
+                    <option value="Outro Serviço">Outro (descrever na mensagem)</option>
+                </select>
+                <button type="button" id="whatsapp-button" class="cta-button">Agendar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Automotiva DRCAR. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Automotiva DRCAR</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+    <style>
+        /* Estilos exclusivos para a galeria */
+        .hero-principal {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://protelim.com.br/wp-content/uploads/2024/04/image2-3.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding-top: 80px;
+            /* Para compensar o header fixo */
+        }
+
+        .gallery-hero {
+            background-image: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), url('https://protelim.com.br/wp-content/uploads/2024/04/image2-3.jpg');
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .gallery-hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-hero-text p {
+            font-size: 1.2rem;
+            color: #272727be;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+            filter: brightness(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+            color: #fff;
+            font-size: 2.5rem;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .galery-content {
+            padding: 5px 0;
+            width: 900px;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            margin: 10px auto;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-item img {
+                height: 350px;
+            }
+
+            .galery-content {
+                padding: 5px 0;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <span class="loader-text">Carregando...</span>
+    </div>
+
+    <a href="https://wa.me/5511986849340?text=Olá! Eu gostaria de agendar um serviço." target="_blank"
+        id="whatsapp-icon">
+        <img src="WhatsApp_icon.png" alt="Fale Conosco pelo WhatsApp">
+    </a>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Automotiva DRCAR</a>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Serviços</a></li>
+                <li><a href="index.html#location">Localização</a></li>
+                <li><a href="index.html#contact">Contato</a></li>
+            </ul>
+            <div class="mobile-menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-principal visible" id="home">
+            <div class="hero-text">
+                <h1>Confira o nossos detalhes</h1>
+                <p>Qualidade e cuidado que seu veículo merece aqui em Osasco. Agende agora mesmo!</p>
+                <div class="hero-buttons">
+                    <a href="index.html#contact" class="cta-button">Agende a sua lavagem</a>
+                </div>
+            </div>
+        </section>
+
+
+        </section>
+
+        <section class="gallery visible">
+            <div class="galery-content">
+                <h2>Nossos Serviços</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, optio alias nostrum odio
+                    incidunt quo at! Natus eligendi magnam sequi, ipsam nulla, architecto est expedita, neque impedit
+                    quisquam sapiente libero!</p>
+            </div>
+            <div class="gallery-grid">
+                <a href="https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Limpeza detalhada de rodas de luxo">
+                    <div class="gallery-item">
+                        <img src="https://www.vipsocial.com.br/admin/image/noticia/38079/44911lg.jpg"
+                            alt="Roda de luxo sendo limpa">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+                <a href="https://images.pexels.com/photos/3807378/pexels-photo-3807378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Aplicação de espuma para lavagem profunda">
+                    <div class="gallery-item">
+                        <img src="https://static.wixstatic.com/media/ddfac4_5a5b674297f9444b8b69ff03c5d32d6d~mv2.jpeg/v1/fill/w_588,h_440,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ddfac4_5a5b674297f9444b8b69ff03c5d32d6d~mv2.jpeg"
+                            alt="Carro coberto de espuma">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+                <a href="https://images.pexels.com/photos/8982367/pexels-photo-8982367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Higienização e aspiração do interior">
+                    <div class="gallery-item">
+                        <img src="https://loja.garage77autocenter.com.br/wp-content/uploads/2023/03/20230103_173806000_iOS-3-1-e1678282927884.jpg"
+                            alt="Limpeza do interior do carro">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+                <a href="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Polimento e enceramento para um brilho espelhado">
+                    <div class="gallery-item">
+                        <img src="https://www.vonixx.com.br/wp-content/uploads/2022/07/captura-de-tela-2024-12-10-161715-png.webp"
+                            alt="Carro esportivo preto encerado">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+                <a href="https://images.pexels.com/photos/707047/pexels-photo-707047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Acabamento perfeito com repelência à água">
+                    <div class="gallery-item">
+                        <img src="https://blog.engecass.com.br/wp-content/uploads/2022/03/Vitrificacao.png"
+                            alt="Gotas de água em capô encerado">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+                <a href="https://images.pexels.com/photos/8982439/pexels-photo-8982439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Secagem cuidadosa com toalha de microfibra">
+                    <div class="gallery-item">
+                        <img src="https://fullpowerpro.com.br/wp-content/uploads/2023/04/fullpower-pro-curso-estetica-automotiva-senior-2.jpg"
+                            alt="Homem secando carro preto">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+
+                <a href="https://images.pexels.com/photos/8982439/pexels-photo-8982439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Secagem cuidadosa com toalha de microfibra">
+                    <div class="gallery-item">
+                        <img src="https://elevadoresrw.com.br/blog/wp-content/uploads/2024/09/Como-montar-uma-estetica-automotiva.jpg"
+                            alt="Homem secando carro preto">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+                <a href="https://images.pexels.com/photos/8982439/pexels-photo-8982439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    data-lightbox="galeria-drcar" data-title="Secagem cuidadosa com toalha de microfibra">
+                    <div class="gallery-item">
+                        <img src="https://trauenautohaus.com.br/wp-content/uploads/2024/08/O-que-e-Estetica-Automotiva-1-1-scaled-e1723825278899.webp"
+                            alt="Homem secando carro preto">
+                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Automotiva DRCAR. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
